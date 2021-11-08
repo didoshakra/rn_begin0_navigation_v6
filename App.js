@@ -7,30 +7,45 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 // import {WebView} from 'react-native-webview';
 import WebViewScr from './screens/WebViewScr';
 import RenderHtml from './screens/RenderHtml';
+import GetStartedScr from './screens/GetStartedScr';
 
 function HomeScreen({navigation}) {
   return (
     <View style={{flex: 1, alignItems: 'center'}}>
-      <Text style={{fontSize: 22, color: 'green'}}>
-        React Native Navigation v6
-      </Text>
-      <Text style={{fontSize: 22, color: 'firebrick'}}>
-        //https://reactnavigation.org/docs/getting-started/
-      </Text>
+      <View
+        style={{
+          // flex: 1,
+          height: 60,
+          width: '100%',
+          alignItems: 'center',
+          backgroundColor: 'yellow',
+        }}>
+        <Text style={{fontSize: 22, color: 'red'}}>
+          React Native Navigation v6
+        </Text>
+        <Text
+          style={{fontSize: 15, color: 'blue'}}
+          onPress={() => navigation.navigate('Geting started')}>
+          //https://reactnavigation.org/docs/getting-started/
+        </Text>
+      </View>
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
         <Text style={{fontSize: 22, color: 'red'}}>Home Screen</Text>
-        <Button
-          title="To Details"
-          onPress={() => navigation.navigate('Details')}
-        />
-        <Button
-          title="Web-ViewScr"
-          onPress={() => navigation.navigate('Web-ViewScr')}
-        />
-        <Button
-          title="Render-Html"
-          onPress={() => navigation.navigate('Render-Html')}
-        />
+        {/* <View style={{flexDirection:'row'}}> */}
+        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <Button
+            title="To Details"
+            onPress={() => navigation.navigate('Details')}
+          />
+          <Button
+            title="Web-ViewScr"
+            onPress={() => navigation.navigate('Web-ViewScr')}
+          />
+          <Button
+            title="Render-Html"
+            onPress={() => navigation.navigate('Render-Html')}
+          />
+        </View>
       </View>
     </View>
   );
@@ -63,6 +78,7 @@ function App() {
         <Stack.Screen name="Details" component={DetailsScreen} />
         <Stack.Screen name="Web-ViewScr" component={WebViewScr} />
         <Stack.Screen name="Render-Html" component={RenderHtml} />
+        <Stack.Screen name="Geting started" component={GetStartedScr} />
       </Stack.Navigator>
     </NavigationContainer>
   );

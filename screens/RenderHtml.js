@@ -1,4 +1,4 @@
-//WebViewScr//https://www.kindacode.com/article/how-to-render-html-content-in-react-native/
+//RenderHtml.js//https://www.kindacode.com/article/how-to-render-html-content-in-react-native/
 import React from 'react';
 import {View, StyleSheet, useWindowDimensions} from 'react-native';
 
